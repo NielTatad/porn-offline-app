@@ -1,0 +1,212 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:UI.Avalonia.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="1400" d:DesignHeight="800"
+        x:Class="UI.Avalonia.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Title="AdultHub (Avalonia)">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto" MinWidth="300" MaxWidth="420"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- LEFT FILTER PANEL -->
+        <Border Grid.Column="0" BorderBrush="#444" BorderThickness="1,0,1,0">
+            <StackPanel Margin="12" Spacing="16">
+                <TextBlock Classes="h1" Text="Preformer Page"/>
+                <Separator/>
+                <TextBlock FontWeight="Bold" Text="Filter"/>
+                <ComboBox PlaceholderText="Ethnicity" SelectedItem="{Binding SelectedEthnicity}" SelectedIndex="{Binding EthnicityIndex}">
+                    <ComboBoxItem>Any</ComboBoxItem>
+                    <ComboBoxItem>Asian</ComboBoxItem>
+                    <ComboBoxItem>Latina</ComboBoxItem>
+                    <ComboBoxItem>Ebony</ComboBoxItem>
+                    <ComboBoxItem>White</ComboBoxItem>
+                </ComboBox>
+                <ComboBox PlaceholderText="Hair colour" SelectedItem="{Binding SelectedHairColor}" SelectedIndex="{Binding HairColorIndex}">
+                    <ComboBoxItem>Any</ComboBoxItem>
+                    <ComboBoxItem>Blonde</ComboBoxItem>
+                    <ComboBoxItem>Brunette</ComboBoxItem>
+                    <ComboBoxItem>Red</ComboBoxItem>
+                    <ComboBoxItem>Black</ComboBoxItem>
+                </ComboBox>
+                <ComboBox PlaceholderText="Breast size" SelectedItem="{Binding SelectedBreastSize}" SelectedIndex="{Binding BreastSizeIndex}">
+                    <ComboBoxItem>Any</ComboBoxItem>
+                    <ComboBoxItem>A</ComboBoxItem>
+                    <ComboBoxItem>B</ComboBoxItem>
+                    <ComboBoxItem>C</ComboBoxItem>
+                    <ComboBoxItem>D+</ComboBoxItem>
+                </ComboBox>
+                <Button Content="Tattoo" Classes="accent" Click="OnTattooClick"/>
+                <Button Content="Piercing" Classes="accent" Click="OnPiercingClick"/>
+                <ComboBox PlaceholderText="Year of active career" SelectedItem="{Binding SelectedActiveDecade}" SelectedIndex="{Binding ActiveDecadeIndex}">
+                    <ComboBoxItem>Any</ComboBoxItem>
+                    <ComboBoxItem>1990s</ComboBoxItem>
+                    <ComboBoxItem>2000s</ComboBoxItem>
+                    <ComboBoxItem>2010s</ComboBoxItem>
+                    <ComboBoxItem>2020s</ComboBoxItem>
+                </ComboBox>
+                <Button Content="Clear all filters" Command="{Binding ClearFiltersCommand}"/>
+                <Separator/>
+                <Button Content="Birthday calendar" Click="OnBirthdayClick"/>
+            </StackPanel>
+        </Border>
+
+        <!-- MAIN CONTENT -->
+        <Grid x:Name="ContentArea" Grid.Column="1" Margin="8,8,8,8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Top nav / tabs -->
+            <StackPanel Orientation="Horizontal" Spacing="24">
+                <TextBlock Classes="h1" Text="Name search"/>
+                <StackPanel Orientation="Horizontal" Spacing="16" Margin="24,0,0,0">
+                    <TextBlock Text="Home" Foreground="#2E6AE5"/>
+                    <TextBlock Text="Media" Foreground="#2E6AE5" PointerPressed="OnOpenMedia"/>
+                    <TextBlock Text="View"/>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Name Search bordered header with A-Z horizontally -->
+            <Border Grid.Row="1" BorderBrush="#C0C0C0" BorderThickness="1" CornerRadius="4" Padding="20" Margin="8,12,8,16" Classes="header-box">
+                <StackPanel Spacing="14">
+                    <TextBlock Text="Name Search:" FontWeight="Bold" Margin="0,0,0,4"/>
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Margin="0,4,0,0">
+                        <WrapPanel ItemHeight="32" ItemWidth="36">
+                            <WrapPanel.Styles>
+                                <Style Selector="Button">
+                                    <Setter Property="Margin" Value="8,6,8,6"/>
+                                    <Setter Property="Padding" Value="12,6"/>
+                                    <Setter Property="MinWidth" Value="36"/>
+                                </Style>
+                            </WrapPanel.Styles>
+                            <Button Content="A" Width="32" Height="28"/>
+                            <Button Content="B" Width="32" Height="28"/>
+                            <Button Content="C" Width="32" Height="28"/>
+                            <Button Content="D" Width="32" Height="28"/>
+                            <Button Content="E" Width="32" Height="28"/>
+                            <Button Content="F" Width="32" Height="28"/>
+                            <Button Content="G" Width="32" Height="28"/>
+                            <Button Content="H" Width="32" Height="28"/>
+                            <Button Content="I" Width="32" Height="28"/>
+                            <Button Content="J" Width="32" Height="28"/>
+                            <Button Content="K" Width="32" Height="28"/>
+                            <Button Content="L" Width="32" Height="28"/>
+                            <Button Content="M" Width="32" Height="28"/>
+                            <Button Content="N" Width="32" Height="28"/>
+                            <Button Content="O" Width="32" Height="28"/>
+                            <Button Content="P" Width="32" Height="28"/>
+                            <Button Content="Q" Width="32" Height="28"/>
+                            <Button Content="R" Width="32" Height="28"/>
+                            <Button Content="S" Width="32" Height="28"/>
+                            <Button Content="T" Width="32" Height="28"/>
+                            <Button Content="U" Width="32" Height="28"/>
+                            <Button Content="V" Width="32" Height="28"/>
+                            <Button Content="W" Width="32" Height="28"/>
+                            <Button Content="X" Width="32" Height="28"/>
+                            <Button Content="Y" Width="32" Height="28"/>
+                            <Button Content="Z" Width="32" Height="28"/>
+                        </WrapPanel>
+                    </ScrollViewer>
+                </StackPanel>
+            </Border>
+
+            <!-- Search + Active Filters row -->
+            <Grid Grid.Row="2" Margin="8,4,8,12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" Spacing="8" Grid.Column="0">
+                    <TextBox MinWidth="320" Watermark="Search performers..." Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Button Classes="accent" Content="Search"/>
+                </StackPanel>
+                <WrapPanel Grid.Column="1" Margin="16,0,0,0" VerticalAlignment="Center">
+                    <Border Background="{StaticResource PanelBrush}" CornerRadius="6" Padding="8,4" Margin="0,0,8,0">
+                        <TextBlock Text="{Binding SelectedPiercing, StringFormat=Piercing: {0}}"/>
+                    </Border>
+                    <Border Background="{StaticResource PanelBrush}" CornerRadius="6" Padding="8,4">
+                        <TextBlock Text="{Binding SelectedTattoo, StringFormat=Tattoo: {0}}"/>
+                    </Border>
+                    <Border Background="{StaticResource PanelBrush}" CornerRadius="6" Padding="8,4" Margin="8,0,0,0">
+                        <TextBlock Text="{Binding SelectedBirthday, StringFormat='Birthday: {0:MMM dd, yyyy}'}"/>
+                    </Border>
+                </WrapPanel>
+            </Grid>
+
+            <!-- Results grid placeholder cards -->
+            <ScrollViewer Grid.Row="3">
+                <ItemsControl x:Name="Cards" ItemsSource="{Binding SamplePerformers}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="{Binding CardColumns}"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="8" HorizontalAlignment="Stretch">
+                                <Border Height="220" Background="#2A2A2A" CornerRadius="6" BorderBrush="#3A3A3A" BorderThickness="1" PointerPressed="OnPerformerClick">
+                                    <Grid>
+                                        <TextBlock Text="Image" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+                                <TextBlock Text="{Binding}" Margin="0,6,0,0" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+
+        <!-- RIGHT SIDEBAR -->
+        <ScrollViewer Grid.Column="2" Margin="8,0,8,0" VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <!-- Favorites -->
+            <TextBlock FontSize="20" FontWeight="Bold" Text="Favorites" Margin="8"/>
+            <ItemsControl Margin="8,0,8,12" ItemsSource="{Binding FavoriteTop}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Height="110" Background="#2A2A2A" CornerRadius="6" Margin="0,6">
+                            <Grid>
+                                <TextBlock Text="▶" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <!-- Last watched -->
+            <TextBlock FontSize="20" FontWeight="Bold" Text="Last watched" Margin="8"/>
+            <ItemsControl Margin="8,0,8,12" ItemsSource="{Binding LastWatchedTop}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Height="110" Background="#2A2A2A" CornerRadius="6" Margin="0,6">
+                            <Grid>
+                                <TextBlock Text="▶" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

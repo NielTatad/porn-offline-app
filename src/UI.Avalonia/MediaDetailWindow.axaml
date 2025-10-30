@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:UI.Avalonia.ViewModels"
+        x:Class="UI.Avalonia.MediaDetailWindow"
+        x:DataType="vm:MediaDetailWindowViewModel"
+        Title="Media Details" Width="1000" Height="700">
+    <Grid Margin="16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Background="#2A2A2A" CornerRadius="6"/>
+        <StackPanel Grid.Column="1" Margin="16" Spacing="8">
+            <TextBlock Text="{Binding Title}" FontSize="24" FontWeight="Bold"/>
+            <TextBlock Text="{Binding Country}"/>
+            <TextBlock Text="{Binding Language}"/>
+            <TextBlock Text="{Binding ReleaseDate}"/>
+            <TextBlock Text="{Binding Genre}"/>
+            <TextBlock Text="{Binding Synopsis}" TextWrapping="Wrap"/>
+        </StackPanel>
+    </Grid>
+</Window>
+
+

@@ -1,0 +1,47 @@
+<Window x:Class="AdultHub.UI.Wpf.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdultHub.UI.Wpf.Views"
+        mc:Ignorable="d"
+        Title="AdultHub" Height="450" Width="800">
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Controls row -->
+        <StackPanel Orientation="Horizontal">
+            <TextBox Width="400"
+                     Margin="0,0,8,0"
+                     Text="{Binding VideoPath, UpdateSourceTrigger=PropertyChanged}" />
+
+            <Button Content="Browse"
+                    Width="80"
+                    Margin="0,0,8,0"
+                    Command="{Binding BrowseCommand}" />
+
+            <Button Content="Play"
+                    Width="80"
+                    Margin="0,0,8,0"
+                    Command="{Binding PlayCommand}" />
+
+            <Button Content="Pause"
+                    Width="80"
+                    Margin="0,0,8,0"
+                    Command="{Binding PauseCommand}" />
+
+            <Button Content="Stop"
+                    Width="80"
+                    Command="{Binding StopCommand}" />
+        </StackPanel>
+
+        <!-- Video Display Placeholder -->
+        <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="1" CornerRadius="4" Padding="8">
+            <TextBlock Text="Video area placeholder - integrate LibVLCSharp or MediaElement" />
+        </Border>
+    </Grid>
+</Window>

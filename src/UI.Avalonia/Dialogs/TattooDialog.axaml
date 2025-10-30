@@ -1,0 +1,22 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="UI.Avalonia.Dialogs.TattooDialog"
+        Title="Select Tattoo" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner"
+        Background="{StaticResource WindowBg}" Foreground="White" CanResize="False">
+    <Border Padding="20" CornerRadius="8">
+        <StackPanel Spacing="12">
+            <TextBlock Text="Choose a tattoo location" FontWeight="Bold"/>
+            <RadioButton GroupName="tattoo" Content="Belly" Tag="Belly"/>
+            <RadioButton GroupName="tattoo" Content="Nose" Tag="Nose"/>
+            <RadioButton GroupName="tattoo" Content="Eyebrow" Tag="Eyebrow"/>
+            <RadioButton GroupName="tattoo" Content="Arm" Tag="Arm"/>
+            <RadioButton GroupName="tattoo" Content="Face" Tag="Face"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8" Margin="0,8,0,0">
+                <Button Width="90" Content="Cancel" IsCancel="True"/>
+                <Button Width="90" Content="OK" Classes="accent" IsDefault="True" Click="OnOk"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>
+
+

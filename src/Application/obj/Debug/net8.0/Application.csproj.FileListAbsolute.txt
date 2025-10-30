@@ -1,0 +1,15 @@
+/mnt/d/DevOps/adult-desktop-app/src/Application/bin/Debug/net8.0/Application.deps.json
+/mnt/d/DevOps/adult-desktop-app/src/Application/bin/Debug/net8.0/Application.dll
+/mnt/d/DevOps/adult-desktop-app/src/Application/bin/Debug/net8.0/Application.pdb
+/mnt/d/DevOps/adult-desktop-app/src/Application/bin/Debug/net8.0/Domain.dll
+/mnt/d/DevOps/adult-desktop-app/src/Application/bin/Debug/net8.0/Domain.pdb
+/mnt/d/DevOps/adult-desktop-app/src/Application/obj/Debug/net8.0/Application.csproj.AssemblyReference.cache
+/mnt/d/DevOps/adult-desktop-app/src/Application/obj/Debug/net8.0/Application.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/d/DevOps/adult-desktop-app/src/Application/obj/Debug/net8.0/Application.AssemblyInfoInputs.cache
+/mnt/d/DevOps/adult-desktop-app/src/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs
+/mnt/d/DevOps/adult-desktop-app/src/Application/obj/Debug/net8.0/Application.csproj.CoreCompileInputs.cache
+/mnt/d/DevOps/adult-desktop-app/src/Application/obj/Debug/net8.0/Applicat.44B5EDA2.Up2Date
+/mnt/d/DevOps/adult-desktop-app/src/Application/obj/Debug/net8.0/Application.dll
+/mnt/d/DevOps/adult-desktop-app/src/Application/obj/Debug/net8.0/refint/Application.dll
+/mnt/d/DevOps/adult-desktop-app/src/Application/obj/Debug/net8.0/Application.pdb
+/mnt/d/DevOps/adult-desktop-app/src/Application/obj/Debug/net8.0/ref/Application.dll

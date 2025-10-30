@@ -1,0 +1,18 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="UI.Avalonia.Dialogs.BirthdayDialog"
+        Title="Select Birthday" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner"
+        Background="{StaticResource WindowBg}" Foreground="White" CanResize="False">
+    <Border Padding="20" CornerRadius="8">
+        <StackPanel Spacing="12">
+            <TextBlock Text="Pick a date" FontWeight="Bold"/>
+            <DatePicker x:Name="DatePicker"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+                <Button Width="90" Content="Cancel" IsCancel="True"/>
+                <Button Width="90" Content="OK" Classes="accent" IsDefault="True" Click="OnOk"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>
+
+

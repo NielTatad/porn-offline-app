@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:UI.Avalonia.ViewModels"
+        x:Class="UI.Avalonia.PerformerDetailWindow"
+        x:DataType="vm:PerformerDetailWindowViewModel"
+        Title="Performer Details" Width="1000" Height="700">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Binding Name}" FontSize="24" FontWeight="Bold"/>
+        <TabControl Grid.Row="1" SelectedIndex="{Binding SelectedTabIndex}">
+            <TabItem Header="Bio">
+                <ScrollViewer Margin="8">
+                    <TextBlock Text="{Binding BioText}"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Background">
+                <ScrollViewer Margin="8">
+                    <TextBlock Text="{Binding BackgroundText}"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Awards">
+                <ScrollViewer Margin="8">
+                    <TextBlock Text="{Binding AwardsText}"/>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
+
+

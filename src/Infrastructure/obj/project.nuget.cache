@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "RcMNkramGIA=",
+  "success": true,
+  "projectFilePath": "/mnt/d/DevOps/adult-desktop-app/src/Infrastructure/Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "/home/neil_atad/.nuget/packages/fluentvalidation/11.9.2/fluentvalidation.11.9.2.nupkg.sha512",
+    "/home/neil_atad/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.1/microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
+    "/home/neil_atad/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.1/microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

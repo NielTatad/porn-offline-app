@@ -1,0 +1,54 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:UI.Avalonia.ViewModels"
+        xmlns:conv="using:UI.Avalonia.Converters"
+        x:Class="UI.Avalonia.MediaWindow"
+        x:DataType="vm:MediaWindowViewModel"
+        Title="Media" Width="1200" Height="800">
+    <Window.Resources>
+        <conv:BoolToStarConverter x:Key="BoolToStar"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto" MinWidth="300" MaxWidth="420"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Reuse left panel placeholder -->
+        <Border Grid.Column="0"/>
+
+        <!-- Center content: thumbnails -->
+        <ScrollViewer Grid.Column="1" Margin="8">
+            <ItemsControl ItemsSource="{Binding Media}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="5"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="8">
+                            <Border Height="200" Background="#2A2A2A" CornerRadius="6">
+                                <Grid>
+                                    <TextBlock Text="Thumbnail" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Border>
+                            <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,6,0,0" HorizontalAlignment="Center">
+                                <TextBlock Text="{Binding Title}"/>
+                                <TextBlock Text="·"/>
+                                <TextBlock Text="{Binding Duration}"/>
+                                <TextBlock Text="{Binding IsFavorite, Converter={StaticResource BoolToStar}}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <!-- Right sidebar placeholder -->
+        <Border Grid.Column="2"/>
+    </Grid>
+</Window>
+
+
